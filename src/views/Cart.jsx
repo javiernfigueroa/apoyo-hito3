@@ -2,13 +2,11 @@ import { useState } from 'react'
 import articles from '../data/data'
 
 function Cart() {
-    // simular 3 pizzas de nuestro arreglo
     const initialCart = articles.slice(0, 3).map((pizza) => ({
         ...pizza,
         quantity: 1,
     }))
 
-    //declarar un estado
     const [cart, setCart] = useState(initialCart);
 
     const increaseQuantity = (id) => {
@@ -58,5 +56,7 @@ function Cart() {
         </div>
     )
 }
+
+
 
 export default Cart
