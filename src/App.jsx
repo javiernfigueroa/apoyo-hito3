@@ -1,18 +1,14 @@
-import Navbar from "./components/Navbar";
-import Home from "./views/Home";
-import Cart from "./views/Cart";
-import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
+import routes from "./routes/routes";
 
 function App() {
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-grow">
-        {/* <Home /> */}
-        <Cart />
-      </main>
-      <Footer />
-    </div>
+    <Routes>
+      {routes.map(({ path, element }) => (
+        <Route key={path} path={path} element={element} />
+      ))}
+    </Routes>
   );
 }
 
